@@ -5,11 +5,14 @@ Router.route('/', function() {
     this.render('home');
 });
 
-Router.route('/productList');
+Router.route('/about');
+Router.route('/FAQ');
+Router.route('/map');
+Router.route('/shop');
 Router.route('/cart');
 if (Meteor.isClient) {
     // This code only runs on the client
-    Template.productList.helpers({
+    Template.shop.helpers({
         products: function () {
             return Products.find({}, {sort: {name: 1}});
         }
@@ -23,7 +26,7 @@ if (Meteor.isClient) {
             var Sum = 0;
 
             Items.forEach(function (Item) {
-                Sum += Item.Price;
+                Sum += Item.price;
             });
             return Sum;
         },
@@ -47,16 +50,16 @@ if (Meteor.isClient) {
         }
     });
     Template.product.events({
-        "click .btn": function () {
-            if (this.InStock) {
-                Cart.insert({Name: this.Name, Price: this.Price});
+        "click .BuyButton": function () {
+            if (this.inStock) {
+                Cart.insert({name: this.name, price: this.price});
             }
             else
                 alert("That item is not in stock");
         }
     });
     Template.cart.events({
-        "click .btn": function () {
+        "click .RemoveButton": function () {
             Cart.remove(this._id);
         }
     })
@@ -65,7 +68,8 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
     Products.remove({});
     Cart.remove({});
-    Products.insert({Name: "Shade Coffee", Price: 2.5, InStock: true});
-    Products.insert({Name: "FairTrade Coffee", Price: 2, InStock: true});
-    Products.insert({Name: "Regular Coffee", Price: 1.5, InStock: false});
+    Products.insert({name: "Shade Coffee", price: 2.50, inStock: true, image:"http://i.imgur.com/s3nQbFK.jpg"});
+    Products.insert({name: "FairTrade Coffee", price: 1.25, inStock: true, image:"http://i.imgur.com/navQW4S.jpg"});
+    Products.insert({name: "Latte", price: 3.00, inStock: true, image:"http://i.imgur.com/PlEaw1a.jpg"});
+    Products.insert({name: "Coffee", price: 1.10, inStock: true, image:"http://i.imgur.com/uktfK50.jpg"});
 }

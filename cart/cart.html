@@ -1,0 +1,24 @@
+<template name="cart">
+    {{>header}}
+    {{>navbar}}
+    <h1>Cart</h1>
+    <h2>Number of items in cart: {{cartTotal}} </h2>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        {{#each cartItems}}
+            <tr>
+                <td>{{name}}</td>
+                <td>£{{price}}</td>
+                <td><button type="button" class="RemoveButton">Remove</button></td>
+            </tr>
+        {{/each}}
+        <tr>
+            <td>Total: £{{SubTotal}}</td>
+        </tr>
+    </table>
+    <button type="button" class="CheckoutButton">Checkout</button>
+</template>

@@ -1,0 +1,23 @@
+<template name="shop">
+    {{>header}}
+    {{>navbar}}
+    <h1>Shop</h1>
+    {{#each products}}
+        {{>product}}
+    {{/each}}
+</template>
+
+<template name="product">
+    <div class="tile">
+        <div class="productImage">
+            <img src="{{image}}">
+        </div>
+        <p class="productDetails">
+
+            <b>Name :</b>{{name}}<br>
+            <b>Price: </b>£{{price}}<br>
+
+            <button type="button" class="BuyButton"><b>Add to cart</b></button>
+        </p>
+    </div>
+</template>
