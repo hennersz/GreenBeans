@@ -10,6 +10,7 @@ Router.route('/FAQ');
 Router.route('/map');
 Router.route('/shop');
 Router.route('/cart');
+Router.route('/checkout');
 if (Meteor.isClient) {
     // This code only runs on the client
     Template.shop.helpers({
