@@ -1,91 +1,8 @@
-<html>
-	<head>
-		<meta charset="UTF-8">
-
-		<style type="text/css">
-			#Header
-				{
-					display:table;
-					width: 100%;
-				}
-			h1
-			{
-					display: table-cell;
-					color: olivedrab;
-					text-align: center;
-					margin-right: auto;
-			}
-			#Logo
-				{	
-					display: table-cell;
-					height: 150px;
-					width: 200px;
-					padding:10px;
-				}
-			#Logo img 
-			{
-    				width: 100%;
-    				height: auto;
-			}
-
-			#NavBar li
-				{
-					display: inline-block;
-					color: olivedrab;
-					font-size: 23px;
-					padding-left: 75px;
-					padding-right: 75px;
-
-
-				}
-			#NavBar
-				{
-					border: 2px solid olivedrab;
-				}
-			#NavBar li:hover
-			{
-					color: orange;
-			}
-			#Title
-			{
-					position: relative;
-					top: -70px;
-
-			}
-
-			#FAQ
-			{
-				margin:75px;
-			}
-		</style>
-
-	</head>
-
-	<body>
-
-		<div id="Header">
-			<div id="Logo">
-				<img src="Logo.jpg">
-			</div>
-			<div id="Title">
-				<h1>Green Bean Coffee</h1>
-			</div>
-		</div>
-
-		<div id="NavBar">
-				<ul>
-					<li>Home</li>
-					<li>About</li>
-					<li>Shop</li>
-					<li>FAQ</li>
-					<li>Map</li>
-					<li>Cart</li>
-				</ul>
-		</div>
-
-		<div id="FAQ">
+<template name="FAQ">
+    {{>header}}
+    {{>navbar}}
+	<div id="FAQ">
 		<h1>FAQ</h1><br>
-
 		<p>
 		<h2>What is GreenBean ?</h2>
 		Green Bean is a cozy coffee shop located at the heart of the UCL Bloomsbury Campus. 
@@ -95,12 +12,7 @@
 		<h2>How do I order?</h2>
 		Please go to the 'Shop' Tab, where you can find all the available products. Once you have decided on what to order<br>
 		press "Add to cart", the selected product will be added to your cart. Go to the Cart tab, where you will find a list<br> of products in your cart. After checking that you have what you want click checkout and follow on-screen instructions ! 
-
-
 		</p>
-		</div>
+	</div>
 
-
-	
-
-	</body>
+</template>
