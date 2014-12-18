@@ -1,0 +1,17 @@
+<template name="QRcart">
+    {{>header}}
+    {{>navbar}}
+    <h1>Shade coffee quick buy</h1>
+        {{#each QRcartItems}}
+            <div class="tile">
+                <div class="productImage">
+                    <img src="{{image}}">
+                </div>
+                <p class="productDetails">
+                    <b>Name :</b>{{name}}<br>
+                    <b>Price: </b>£{{price}}<br>
+                </p>
+            </div>
+        {{/each}}
+    <a href="/checkout"><button type="button" class="CheckoutButton">Checkout</button></a>
+</template>
